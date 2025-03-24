@@ -9,7 +9,6 @@ COMMENT=update
 
 all:
 	make kernel
-	make run
 
 kernel:
 	${NVCC} -arch=sm_${sm_version} ${OPTIMIZATION} ${INCLUDES} ${LINKS} -o ${OUTPUT} ${KERNEL}
