@@ -19,7 +19,7 @@ kernel:
 	${LINKS} \
 	-o ${OUTPUT} \
 	-DKERNEL=${KERNEL} \
-	test.cu
+	main.cu
 
 push:
 	git add .
