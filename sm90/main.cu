@@ -48,7 +48,7 @@ int main() {
 		#if KERNEL == 1
 		test<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, d_results);
 		#elif KERNEL == 2
-		kernel_contiguous<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_warp, d_results);
+		kernel_contiguous<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_block, d_results);
 		#endif
 	}
 	
