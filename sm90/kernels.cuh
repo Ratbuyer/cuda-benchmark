@@ -84,7 +84,7 @@ __global__ void kernel_contiguous(int * data, int size, int work_per_block, int 
 	for (int i = 0; i < work_per_block/shared_size; ++i) {
 		if (threadIdx.x == 0) {
 			// call the loading api
-			cde::cp_async_bulk_global_to_shared(shared, data + i * work_per_block * BLOCKS_PER_GRID, sizeof(shared), bar);
+			cde::cp_async_bulk_global_to_shared(shared, data, sizeof(shared), bar);
 			token = cuda::device::barrier_arrive_tx(bar, 1, sizeof(shared));
 		} else {
 			token = bar.arrive();
