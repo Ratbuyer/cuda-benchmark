@@ -4,6 +4,16 @@
 
 #include "kernels.cuh"
 
+void cuda_check_error()
+{
+  cudaDeviceSynchronize();
+
+  cudaError_t err = cudaGetLastError();
+  if (err != cudaSuccess)
+  {
+    printf("CUDA error: %s\n", cudaGetErrorString(err));
+  }
+}
 
 int main() {
 	
@@ -50,6 +60,8 @@ int main() {
 	cudaEventElapsedTime(&milliseconds, start, stop);
 	
 	printf("Time: %f ms\n", milliseconds);
+	
+	cuda_check_error();
 	
 	int *results = new int[WARPS_PER_BLOCK * BLOCKS_PER_GRID * 32];
 	
