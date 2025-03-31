@@ -137,6 +137,9 @@ __global__ void test(int * data, int *results) {
 	
 }
 
+
+static constexpr size_t buf_len = 1024;
+
 __global__ void add_one_kernel(int* data, size_t offset)
 {
   // Shared memory buffers for x and y. The destination shared memory buffer of
