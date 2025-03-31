@@ -34,7 +34,7 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 	
 	int sum = 0;
 	
-	for (int i = 0; i < work_per_block/shared_size; ++i) {
+	for (int i = 0; i < 1; ++i) {
 		if (tid == 0) {
 			// call the loading api
 			cde::cp_async_bulk_global_to_shared(shared, data + block_id * work_per_block, sizeof(shared), bar);
