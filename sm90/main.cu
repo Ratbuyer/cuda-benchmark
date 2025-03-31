@@ -9,12 +9,12 @@ int main() {
 	
 	constexpr int total_size = 1 << 26;
 	
-	int work_per_warp = total_size / (WARPS_PER_BLOCK * BLOCKS_PER_GRID);
+	int work_per_block = total_size / (BLOCKS_PER_GRID);
 	
-	assert(work_per_warp % (32 * 4) == 0);
+	assert(work_per_block % (32 * 4) == 0);
 	
 	printf("Data size in GB: %f\n", total_size * sizeof(int) / 1e9);
-	printf("Work per warp: %d\n", work_per_warp);
+	printf("Work per block: %d\n", work_per_block);
 	
 	int *data = new int[total_size];
 	
@@ -36,9 +36,9 @@ int main() {
 	
 	for (int i = 0; i < 1000; i++) {
 		#if KERNEL == 1
-		kernel_stride<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_warp, d_results);
-		#elif KERNEL == 2
-		kernel_contiguous<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_warp, d_results);
+		kernel_stride<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_block, d_results);
+		// #elif KERNEL == 2
+		// kernel_contiguous<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_warp, d_results);
 		#endif
 	}
 	

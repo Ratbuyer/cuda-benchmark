@@ -1,4 +1,4 @@
-sm_version=86
+sm_version=90a
 NVCC=/usr/local/cuda-12.4/bin/nvcc
 INCLUDES=
 OPTIMIZATION=-O3
@@ -6,7 +6,6 @@ OPTIMIZATION=-O3
 LINKS=-lcudart -lcuda
 OUTPUT=out
 KERNEL=1
-
 COMMENT=update
 
 all:
