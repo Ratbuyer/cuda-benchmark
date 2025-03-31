@@ -28,6 +28,7 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 	
 	if (threadIdx.x == 0) {
 		init(&bar, blockDim.x);
+		cde::fence_proxy_async_shared_cta()
 	}
 	
 	uint64_t token;
