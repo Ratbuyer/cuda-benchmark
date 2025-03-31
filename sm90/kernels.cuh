@@ -1,6 +1,6 @@
-#define WARPS_PER_BLOCK 8
+#define WARPS_PER_BLOCK 4
 #define THREADS_PER_BLOCK (32 * WARPS_PER_BLOCK)
-#define BLOCKS_PER_GRID 16
+#define BLOCKS_PER_GRID 1
 
 #define BLOCK_SIZE 4
 
@@ -48,7 +48,7 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 		bar.wait(std::move(token));
 		
 		for (int j = 0; j < BLOCK_SIZE; j++) {
-			sum += shared[threadIdx.x * BLOCK_SIZE + j];
+			sum += shared[0];
 		}
 	}
 	
