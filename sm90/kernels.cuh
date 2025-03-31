@@ -127,13 +127,15 @@ __global__ void test(int * data, int *results) {
   // 2. Initiate TMA transfer to copy global to shared memory.
   barrier::arrival_token token;
   if (threadIdx.x == 0) {
-    cde::cp_async_bulk_global_to_shared(smem_data, data + offset, sizeof(smem_data), bar);
+    cde::cp_async_bulk_global_to_shared(smem_data, data, sizeof(smem_data), bar);
     // 3a. Arrive on the barrier and tell how many bytes are expected to come in (the transaction count)
     token = cuda::device::barrier_arrive_tx(bar, 1, sizeof(smem_data));
   } else {
     // 3b. Rest of threads just arrive
     token = bar.arrive();
   }
+  
+  results[0] = smem_data[0];
 	
 }
 
