@@ -1,6 +1,6 @@
 #define WARPS_PER_BLOCK 8
 #define THREADS_PER_BLOCK (32 * WARPS_PER_BLOCK)
-#define BLOCKS_PER_GRID 1
+#define BLOCKS_PER_GRID 8
 
 #define BLOCK_SIZE 4
 
