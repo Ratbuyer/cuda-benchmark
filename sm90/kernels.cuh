@@ -31,12 +31,13 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 		cde::fence_proxy_async_shared_cta();
 	}
 	
-	uint64_t token;
+	
+	barrier::arrival_token token;
 	
 	int sum = 0;
 	
 	for (int i = 0; i < 1; ++i) {
-		if (tid == 0) {
+		if (thread_id == 0) {
 			// call the loading api
 			cde::cp_async_bulk_global_to_shared(shared, data + block_id * work_per_block, sizeof(shared), bar);
 			token = cuda::device::barrier_arrive_tx(bar, 1, sizeof(shared));
