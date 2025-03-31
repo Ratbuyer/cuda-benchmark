@@ -37,7 +37,7 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 	for (int i = 0; i < work_per_block/shared_size; ++i) {
 		if (tid == 0) {
 			// call the loading api
-			cde::cp_async_bulk_global_to_shared(shared, data + block_id * work_per_block + i * shared_size, sizeof(shared), bar);
+			cde::cp_async_bulk_global_to_shared(shared, data + block_id * work_per_block, sizeof(shared), bar);
 			token = cuda::device::barrier_arrive_tx(bar, 1, sizeof(shared));
 		} else {
 			token = bar.arrive();
