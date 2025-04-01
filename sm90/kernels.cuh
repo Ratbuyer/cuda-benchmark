@@ -22,7 +22,7 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 	
 	const int shared_size = 32 * WARPS_PER_BLOCK * BLOCK_SIZE;
 	
-	__shared__ alignas(16) int shared[32 * WARPS_PER_BLOCK * BLOCK_SIZE];
+	__align__(128) __shared__ int shared[32 * WARPS_PER_BLOCK * BLOCK_SIZE];
 	
 	__shared__ barrier bar;
 	
@@ -31,15 +31,16 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 		cde::fence_proxy_async_shared_cta();
 	}
 	
+	__syncthreads();
 	
-	barrier::arrival_token token;
+	uint64_t token;
 	
 	int sum = 0;
 	
-	for (int i = 0; i < 1; ++i) {
+	for (int i = 0; i < work_per_block/shared_size; ++i) {
 		if (threadIdx.x == 0) {
 			// call the loading api
-			cde::cp_async_bulk_global_to_shared(shared, data + block_id * work_per_block, sizeof(shared), bar);
+			cde::cp_async_bulk_global_to_shared(shared, data + i * shared_size * BLOCKS_PER_GRID + block_id * shared_size, sizeof(shared), bar);
 			token = cuda::device::barrier_arrive_tx(bar, 1, sizeof(shared));
 		} else {
 			token = bar.arrive();
@@ -47,9 +48,13 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 		
 		bar.wait(std::move(token));
 		
+		__syncthreads();
+		
 		for (int j = 0; j < BLOCK_SIZE; j++) {
-			sum += shared[0];
+			sum += shared[threadIdx.x * BLOCK_SIZE + j];
 		}
+		
+		__syncthreads();
 	}
 	
 	results[thread_id] = sum;
