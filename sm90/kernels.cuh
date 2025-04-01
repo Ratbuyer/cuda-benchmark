@@ -1,6 +1,6 @@
-#define WARPS_PER_BLOCK 8
+#define WARPS_PER_BLOCK 1
 #define THREADS_PER_BLOCK (32 * WARPS_PER_BLOCK)
-#define BLOCKS_PER_GRID 8
+#define BLOCKS_PER_GRID 32
 
 #define BLOCK_SIZE 4
 
@@ -15,9 +15,9 @@ namespace cde = cuda::device::experimental;
 // kernel 1
 __global__ void kernel_stride(int * data, int size, int work_per_block, int *results) {
 	
-	const int warp_id = (threadIdx.x / 32) + (blockIdx.x * WARPS_PER_BLOCK);
+	// const int warp_id = (threadIdx.x / 32) + (blockIdx.x * WARPS_PER_BLOCK);
 	const int block_id = blockIdx.x;
-	const int tid = threadIdx.x % 32;
+	// const int tid = threadIdx.x % 32;
 	const int thread_id = threadIdx.x + (blockIdx.x * blockDim.x);
 	
 	const int shared_size = 32 * WARPS_PER_BLOCK * BLOCK_SIZE;
@@ -60,9 +60,9 @@ __global__ void kernel_stride(int * data, int size, int work_per_block, int *res
 // kernel 2
 __global__ void kernel_contiguous(int * data, int size, int work_per_block, int *results) {
 	
-	const int warp_id = (threadIdx.x / 32) + (blockIdx.x * WARPS_PER_BLOCK);
+	// const int warp_id = (threadIdx.x / 32) + (blockIdx.x * WARPS_PER_BLOCK);
 	const int block_id = blockIdx.x;
-	const int tid = threadIdx.x % 32;
+	// const int tid = threadIdx.x % 32;
 	const int thread_id = threadIdx.x + (blockIdx.x * blockDim.x);
 	
 	const int shared_size = 32 * WARPS_PER_BLOCK * BLOCK_SIZE;
