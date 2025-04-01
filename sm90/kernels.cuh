@@ -136,7 +136,7 @@ __global__ void kernel_stride2(int * data, int size, int work_per_block, int *re
 		cde::cp_async_bulk_global_to_shared(shared[phase], data + block_id * work_per_block + i * shared_size, sizeof(shared[0]), bar0);
 		token0 = cuda::device::barrier_arrive_tx(bar0, 1, sizeof(shared[0]));
 	} else {
-		token0 = bar.arrive();
+		token0 = bar0.arrive();
 	}
 	
 	for (i = 1; i < work_per_block/shared_size - 1; ++i) {
@@ -170,6 +170,19 @@ __global__ void kernel_stride2(int * data, int size, int work_per_block, int *re
 		for (int j = 0; j < BLOCK_SIZE; j++) {
 			sum += shared[1 - phase][threadIdx.x * BLOCK_SIZE + j];
 		}
+	}
+	
+	// last iteration
+	phase = 1 - phase;
+	
+	if (phase == 0) {
+		bar0.wait(std::move(token0));
+	} else {
+		bar1.wait(std::move(token1));
+	}
+	
+	for (int j = 0; j < BLOCK_SIZE; j++) {
+		sum += shared[1 - phase][threadIdx.x * BLOCK_SIZE + j];
 	}
 	
 	results[thread_id] = sum;
