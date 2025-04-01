@@ -255,7 +255,7 @@ __global__ void kernel_stride3(int * data, int size, int work_per_block, int *re
 	}
 	
 	// last iterations
-	for (j = 0; j < STAGES - 1; ++j) {
+	for (int k = 0; k < STAGES - 1; ++k) {
 		phase = (i + STAGES) % STAGES;
 		
 		int buffer = (phase + 1) % STAGES;
