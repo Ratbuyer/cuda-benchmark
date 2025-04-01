@@ -7,7 +7,7 @@
 
 int main() {
 	
-	constexpr int total_size = 1 << 26;
+	constexpr int total_size = 1 << 28;
 	
 	int work_per_warp = total_size / (WARPS_PER_BLOCK * BLOCKS_PER_GRID);
 	

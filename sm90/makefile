@@ -1,5 +1,5 @@
 sm_version=90a
-NVCC=nvcc
+NVCC=/usr/local/cuda-12.4/bin/nvcc
 INCLUDES=
 OPTIMIZATION=-O3
 # DEBUG=-DNDEBUG
