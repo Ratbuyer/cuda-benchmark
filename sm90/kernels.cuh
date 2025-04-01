@@ -255,7 +255,7 @@ __global__ void kernel_stride3(int * data, int size, int work_per_block, int *re
 	}
 	
 	// last iterations
-	for (; i < STAGES - 1; ++i) {
+	for (j = 0; j < STAGES - 1; ++j) {
 		phase = (i + STAGES) % STAGES;
 		
 		int buffer = (phase + 1) % STAGES;
@@ -264,6 +264,8 @@ __global__ void kernel_stride3(int * data, int size, int work_per_block, int *re
 		for (int j = 0; j < BLOCK_SIZE; j++) {
 			sum += shared[buffer][threadIdx.x * BLOCK_SIZE + j];
 		}
+		
+		i++;
 	}
 	
 	results[thread_id] = sum;
