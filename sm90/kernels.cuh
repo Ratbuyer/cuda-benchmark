@@ -247,7 +247,7 @@ __global__ void kernel_stride3(int * data, int size, int work_per_block, int *re
 		
 		// wait for the corresponding buffer
 		int buffer = (phase + 1) % STAGES;
-		token[buffer] = bar[buffer].arrive();
+		bar[buffer].wait(std::move(token[buffer]));
 		
 		for (int j = 0; j < BLOCK_SIZE; j++) {
 			sum += shared[buffer][threadIdx.x * BLOCK_SIZE + j];
@@ -257,6 +257,7 @@ __global__ void kernel_stride3(int * data, int size, int work_per_block, int *re
 	// last iterations
 	for (; i < STAGES - 1; ++i) {
 		phase = (i + STAGES) % STAGES;
+		
 		int buffer = (phase + 1) % STAGES;
 		token[buffer] = bar[buffer].arrive();
 		
