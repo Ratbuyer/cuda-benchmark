@@ -4,6 +4,8 @@
 
 #define BLOCK_SIZE 8
 
+#define STAGES 3
+
 #include <cuda/barrier>
 
 // Suppress warning about barrier in shared memory
@@ -139,7 +141,7 @@ __global__ void kernel_stride2(int * data, int size, int work_per_block, int *re
 		token0 = bar0.arrive();
 	}
 	
-	for (i = 1; i < work_per_block/shared_size - 1; ++i) {
+	for (i = 1; i < work_per_block/shared_size; ++i) {
 		
 		// double buffer
 		phase = 1 - phase;
@@ -183,6 +185,84 @@ __global__ void kernel_stride2(int * data, int size, int work_per_block, int *re
 	
 	for (int j = 0; j < BLOCK_SIZE; j++) {
 		sum += shared[1 - phase][threadIdx.x * BLOCK_SIZE + j];
+	}
+	
+	results[thread_id] = sum;
+	
+}
+
+__global__ void kernel_stride3(int * data, int size, int work_per_block, int *results) {
+	
+	// const int warp_id = (threadIdx.x / 32) + (blockIdx.x * WARPS_PER_BLOCK);
+	const int block_id = blockIdx.x;
+	// const int tid = threadIdx.x % 32;
+	const int thread_id = threadIdx.x + (blockIdx.x * blockDim.x);
+	
+	const int shared_size = 32 * WARPS_PER_BLOCK * BLOCK_SIZE;
+	const int shared_size_bytes = sizeof(int) * shared_size;
+	
+	__align__(128) __shared__ int shared[STAGES][32 * WARPS_PER_BLOCK * BLOCK_SIZE];
+	
+	__shared__ barrier bar[STAGES];
+	
+	if (threadIdx.x == 0) {
+		for (int i = 0; i < STAGES; i++) {
+			init(&bar[i], blockDim.x);
+		}
+		cde::fence_proxy_async_shared_cta();
+	}
+	
+	__syncthreads();
+	
+	uint64_t token[STAGES];
+	
+	int sum = 0;
+	
+	int i, phase;
+	
+	for (i = 0; i < STAGES - 1; i++) {
+		phase = (i + STAGES) % STAGES;
+		if (threadIdx.x == 0) {
+			// call the loading api
+			cde::cp_async_bulk_global_to_shared(shared[phase], data + block_id * work_per_block + i * shared_size, shared_size_bytes, bar[phase]);
+			token[phase] = cuda::device::barrier_arrive_tx(bar[phase], 1, shared_size_bytes);
+		} else {
+			token[phase] = bar[phase].arrive();
+		}
+	}
+	
+	// start with i = STAGES - 1
+	for (; i < work_per_block/shared_size; ++i) {
+		
+		// N buffering
+		phase = (i + STAGES) % STAGES;
+		
+		if (threadIdx.x == 0) {
+			// call the loading api
+			cde::cp_async_bulk_global_to_shared(shared[phase], data + block_id * work_per_block + i * shared_size, shared_size_bytes, bar[phase]);
+			token[phase] = cuda::device::barrier_arrive_tx(bar[phase], 1, shared_size_bytes);
+		} else {
+			token[phase] = bar[phase].arrive();
+		}
+		
+		// wait for the corresponding buffer
+		int buffer = (phase + 1) % STAGES;
+		token[buffer] = bar[buffer].arrive();
+		
+		for (int j = 0; j < BLOCK_SIZE; j++) {
+			sum += shared[buffer][threadIdx.x * BLOCK_SIZE + j];
+		}
+	}
+	
+	// last iterations
+	for (; i < STAGES - 1; ++i) {
+		phase = (i + STAGES) % STAGES;
+		int buffer = (phase + 1) % STAGES;
+		token[buffer] = bar[buffer].arrive();
+		
+		for (int j = 0; j < BLOCK_SIZE; j++) {
+			sum += shared[buffer][threadIdx.x * BLOCK_SIZE + j];
+		}
 	}
 	
 	results[thread_id] = sum;
