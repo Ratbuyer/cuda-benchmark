@@ -147,11 +147,11 @@ __global__ void kernel_stride2(int * data, int size, int work_per_block, int *re
 		if (threadIdx.x == 0) {
 			// call the loading api
 			if (phase == 0) {
-				cde::cp_async_bulk_global_to_shared(shared[phase], data + block_id * work_per_block + i * shared_size, sizeof(shared), bar1);
-				token1 = cuda::device::barrier_arrive_tx(bar1, 1, sizeof(shared));
+				cde::cp_async_bulk_global_to_shared(shared[phase], data + block_id * work_per_block + i * shared_size, sizeof(shared[0]), bar1);
+				token1 = cuda::device::barrier_arrive_tx(bar1, 1, sizeof(shared[0]));
 			} else {
-				cde::cp_async_bulk_global_to_shared(shared[phase], data + block_id * work_per_block + i * shared_size, sizeof(shared), bar0);
-				token0 = cuda::device::barrier_arrive_tx(bar0, 1, sizeof(shared));
+				cde::cp_async_bulk_global_to_shared(shared[phase], data + block_id * work_per_block + i * shared_size, sizeof(shared[0]), bar0);
+				token0 = cuda::device::barrier_arrive_tx(bar0, 1, sizeof(shared[0]));
 			}
 		} else {
 			if (phase == 0) {
