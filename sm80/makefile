@@ -6,6 +6,8 @@ OPTIMIZATION=-O3
 LINKS=-lcudart -lcuda
 OUTPUT=out
 KERNEL=1
+BLOCK_SIZE=1
+DATA_SIZE=28
 
 COMMENT=update
 
@@ -20,6 +22,8 @@ kernel:
 	${LINKS} \
 	-o ${OUTPUT} \
 	-DKERNEL=${KERNEL} \
+	-DBLOCK_SIZE=${BLOCK_SIZE} \
+	-DDATA_SIZE=${DATA_SIZE} \
 	main.cu
 
 push:
