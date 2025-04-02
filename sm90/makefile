@@ -7,6 +7,8 @@ LINKS=-lcudart -lcuda
 OUTPUT=out
 KERNEL=1
 COMMENT=update
+BLOCK_SIZE=1
+DATA_SIZE=28
 
 all:
 	make kernel
@@ -19,6 +21,8 @@ kernel:
 	${LINKS} \
 	-o ${OUTPUT} \
 	-DKERNEL=${KERNEL} \
+	-DBLOCK_SIZE=${BLOCK_SIZE} \
+	-DDATA_SIZE=${DATA_SIZE} \
 	main.cu
 
 push:

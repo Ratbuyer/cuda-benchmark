@@ -1,6 +1,6 @@
 #define WARPS_PER_BLOCK 8
 #define THREADS_PER_BLOCK (32 * WARPS_PER_BLOCK)
-#define BLOCKS_PER_GRID 16
+#define BLOCKS_PER_GRID 128
 
 // kernel 1
 __global__ void kernel_stride(int * data, int size, int work_per_warp, int *results) {

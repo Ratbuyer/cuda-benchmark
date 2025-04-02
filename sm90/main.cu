@@ -17,7 +17,7 @@ void cuda_check_error()
 
 int main() {
 	
-	constexpr int total_size = 1 << 28;
+	constexpr int total_size = 1 << DATA_SIZE;
 	
 	int work_per_block = total_size / (BLOCKS_PER_GRID);
 	

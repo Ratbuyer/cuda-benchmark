@@ -2,8 +2,6 @@
 #define THREADS_PER_BLOCK (32 * WARPS_PER_BLOCK)
 #define BLOCKS_PER_GRID 16
 
-#define BLOCK_SIZE 8
-
 #define STAGES 3
 
 #include <cuda/barrier>
