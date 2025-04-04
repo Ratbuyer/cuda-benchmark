@@ -11,11 +11,11 @@ def extract_all_times_from_file(filename):
         return []
 
 # Example usage
-log_file = "log.txt"  # Replace with your actual file path
+log_file = "log2.txt"  # Replace with your actual file path
 times = extract_all_times_from_file(log_file)
 
 if times:
     for t in times:
-        print(f"{t} ms")
+        print(f"{t}")
 else:
     print("No time entries found.")

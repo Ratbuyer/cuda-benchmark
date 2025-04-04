@@ -1,0 +1,1760 @@
+tma
+
+root@881b7cde9a86:~/cuda-benchmark/sm80# bash script.sh
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 283.252167 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 558.063904 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1108.644531 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2198.989990 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 283.258331 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 557.137390 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1107.464844 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2195.905029 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 282.586060 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 556.826904 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1110.206421 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2200.093994 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 339.372223 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 668.858398 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1332.548462 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2653.147949 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 359.401978 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 725.616333 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1477.837524 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2945.821045 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=32 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 372.607117 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=32 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 749.451172 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=32 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1505.027100 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=32 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 3014.823242 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 281.755554 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 557.587524 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1109.710083 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2214.179932 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 281.715881 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 555.292847 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1099.357788 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2185.657715 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 283.009033 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 556.850403 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1103.519409 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2193.649414 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 338.576294 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 666.832336 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1326.180664 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2646.190430 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 346.739014 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 688.589966 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1399.005249 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2869.857666 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=32 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 0.536871
+Work per warp: 131072
+Time: 351.733948 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=32 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 1.073742
+Work per warp: 262144
+Time: 706.865295 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=32 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 2.147484
+Work per warp: 524288
+Time: 1445.753906 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm80'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_86 \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=32 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm80'
+./out
+Data size in GB: 4.294967
+Work per warp: 1048576
+Time: 2927.912598 ms
+Sum: 536909285
+CPU Sum: 536909285
+root@881b7cde9a86:~/cuda-benchmark/sm80# cd ../sm90
+root@881b7cde9a86:~/cuda-benchmark/sm90# ls
+kernels.cuh  main.cu  makefile  out  script.sh
+root@881b7cde9a86:~/cuda-benchmark/sm90# vim kernel.sh
+root@881b7cde9a86:~/cuda-benchmark/sm90# ls
+kernels.cuh  main.cu  makefile  out  script.sh
+root@881b7cde9a86:~/cuda-benchmark/sm90# vim kernels.cuh 
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=1 DATA_SIZE=25
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=25 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# make run
+./out
+Data size in GB: 0.134218
+Work per block: 1048576
+Time: 1184.442505 ms
+Sum: 151005076
+CPU Sum: 151005076
+root@881b7cde9a86:~/cuda-benchmark/sm90# vim kernels.cuh 
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=1 DATA_SIZE=25
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=25 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# make run
+./out
+Data size in GB: 0.134218
+Work per block: 262144
+Time: 325.640533 ms
+Sum: 151005076
+CPU Sum: 151005076
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=1 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# make run
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 1291.005005 ms
+Sum: 604021977
+CPU Sum: 604021977
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE41 DATA_SIZE=27
+make: *** No rule to make target 'BLOCK_SIZE41'.  Stop.
+root@881b7cde9a86:~/cuda-benchmark/sm90# ^C
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=4 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# make run
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 353.172241 ms
+Sum: 604021977
+CPU Sum: 604021977
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=8 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# make run
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 280.605927 ms
+Sum: 604021977
+CPU Sum: 604021977
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=16 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=16 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# make run
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 0.432576 ms
+CUDA error: invalid argument
+Sum: 0
+CPU Sum: 604021977
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=8 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# vim kernels.cuh 
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=8 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# make run
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 298.916107 ms
+Sum: 604021977
+CPU Sum: 604021977
+root@881b7cde9a86:~/cuda-benchmark/sm90# vim kernels.cuh 
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=8 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+root@881b7cde9a86:~/cuda-benchmark/sm90# make run
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 284.450012 ms
+Sum: 604021977
+CPU Sum: 604021977
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=8 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+^C^Cnvcc error   : 'cicc' died due to signal 2 
+make[1]: *** [makefile:17: kernel] Error 2
+make: *** [makefile:14: all] Interrupt
+
+root@881b7cde9a86:~/cuda-benchmark/sm90# make BLOCK_SIZE=8 DATA_SIZE=27
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+^C
+Compilation terminated.
+nvcc error   : 'cudafe++' died due to signal 2 
+make[1]: *** [makefile:17: kernel] Error 2
+make: *** [makefile:14: all] Interrupt
+
+root@881b7cde9a86:~/cuda-benchmark/sm90# vim kernels.cuh 
+root@881b7cde9a86:~/cuda-benchmark/sm90# vim script.sh 
+root@881b7cde9a86:~/cuda-benchmark/sm90# bash script.sh 
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 1291.959351 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 1.073742
+Work per block: 2097152
+Time: 2577.338379 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 2.147484
+Work per block: 4194304
+Time: 5148.979004 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 4.294967
+Work per block: 8388608
+Time: 10292.439453 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 654.321167 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 1.073742
+Work per block: 2097152
+Time: 1303.446289 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 2.147484
+Work per block: 4194304
+Time: 2598.848145 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 4.294967
+Work per block: 8388608
+Time: 5192.717773 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 353.057831 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 1.073742
+Work per block: 2097152
+Time: 701.055420 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 2.147484
+Work per block: 4194304
+Time: 1396.801147 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 4.294967
+Work per block: 8388608
+Time: 2786.301758 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 280.132416 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 1.073742
+Work per block: 2097152
+Time: 553.773987 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 2.147484
+Work per block: 4194304
+Time: 1099.279419 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=1 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 4.294967
+Work per block: 8388608
+Time: 2187.880371 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 1288.901855 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 1.073742
+Work per block: 2097152
+Time: 2571.427490 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 2.147484
+Work per block: 4194304
+Time: 5138.693359 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=1 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 4.294967
+Work per block: 8388608
+Time: 10270.375000 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 649.099548 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 1.073742
+Work per block: 2097152
+Time: 1293.710693 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 2.147484
+Work per block: 4194304
+Time: 2579.361816 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=2 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 4.294967
+Work per block: 8388608
+Time: 5154.628906 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 351.035583 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 1.073742
+Work per block: 2097152
+Time: 698.604919 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 2.147484
+Work per block: 4194304
+Time: 1394.642090 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=4 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 4.294967
+Work per block: 8388608
+Time: 2783.902100 ms
+Sum: 536909285
+CPU Sum: 536909285
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=27 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 0.536871
+Work per block: 1048576
+Time: 283.879883 ms
+Sum: 604021977
+CPU Sum: 604021977
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=28 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 1.073742
+Work per block: 2097152
+Time: 557.756714 ms
+Sum: 1207991106
+CPU Sum: 1207991106
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=29 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 2.147484
+Work per block: 4194304
+Time: 1101.510620 ms
+Sum: -1879005264
+CPU Sum: -1879005264
+make kernel
+make[1]: Entering directory '/root/cuda-benchmark/sm90'
+/usr/local/cuda-12.4/bin/nvcc -arch=sm_90a \
+-O3 \
+ \
+ \
+-lcudart -lcuda \
+-o out \
+-DKERNEL=2 \
+-DBLOCK_SIZE=8 \
+-DDATA_SIZE=30 \
+main.cu
+make[1]: Leaving directory '/root/cuda-benchmark/sm90'
+./out
+Data size in GB: 4.294967
+Work per block: 8388608
+Time: 2187.289795 ms
+Sum: 536909285
+CPU Sum: 536909285
+root@881b7cde9a86:~/cuda-benchmark/sm90# 
+

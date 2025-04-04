@@ -4,6 +4,16 @@
 
 #include "kernels.cuh"
 
+void cuda_check_error()
+{
+  cudaDeviceSynchronize();
+
+  cudaError_t err = cudaGetLastError();
+  if (err != cudaSuccess)
+  {
+    printf("CUDA error: %s\n", cudaGetErrorString(err));
+  }
+}
 
 int main() {
 	
@@ -12,9 +22,11 @@ int main() {
 	int work_per_warp = total_size / (WARPS_PER_BLOCK * BLOCKS_PER_GRID);
 	
 	assert(work_per_warp % (32 * 4) == 0);
+	assert(work_per_warp % (32 * 4 * BLOCK_SIZE) == 0);
 	
 	printf("Data size in GB: %f\n", total_size * sizeof(int) / 1e9);
 	printf("Work per warp: %d\n", work_per_warp);
+	printf("slots per warp: %d\n", work_per_warp / (32 * 4 * BLOCK_SIZE));
 	
 	int *data = new int[total_size];
 	
@@ -36,11 +48,13 @@ int main() {
 	
 	for (int i = 0; i < 1000; i++) {
 		#if KERNEL == 1
-		kernel_stride<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_warp, d_results);
+		kernel_gap<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_warp, d_results);
 		#elif KERNEL == 2
 		kernel_contiguous<<<BLOCKS_PER_GRID, THREADS_PER_BLOCK>>>(d_data, total_size, work_per_warp, d_results);
 		#endif
 	}
+	
+	cuda_check_error();
 	
 	cudaEventRecord(stop);
 	
