@@ -2,6 +2,7 @@
 #include <cassert>
 #include <random>
 #include <algorithm>
+#include <iostream>
 
 #include "kernels.cuh"
 
@@ -23,27 +24,31 @@ int main() {
 	constexpr int slot_size = 32 * BLOCK_SIZE;
 	#endif
 	
-	constexpr int total_size = (1 << DATA_SIZE) * WARPS_PER_BLOCK * BLOCKS_PER_GRID;
+	constexpr uint64_t total_size = (1ULL << DATA_SIZE);
 	
-	int num_slots = total_size / slot_size;
-	int slots_per_warp = num_slots / (WARPS_PER_BLOCK * BLOCKS_PER_GRID);
+	uint64_t num_slots = total_size / slot_size;
+	uint64_t slots_per_warp = num_slots / (WARPS_PER_BLOCK * BLOCKS_PER_GRID);
 	
-	printf("Data size in GB: %f\n", total_size * sizeof(int) / 1e9);
-	printf("num slots: %d\n", num_slots);
-	printf("slots per warp: %d\n", slots_per_warp);
+	std::cout << "Data size in GB: " << total_size * sizeof(int) / 1e9 << std::endl;
+	std::cout << "num slots: " << num_slots << std::endl;
+	std::cout << "slots per warp: " << slots_per_warp << std::endl;
+	
+	// printf("Data size in GB: %f\n", total_size * sizeof(int) / 1e9);
+	// printf("num slots: %ll\n", num_slots);
+	// printf("slots per warp: %ll\n", slots_per_warp);
 	
 	assert(total_size % slot_size == 0);
 	assert(num_slots % (WARPS_PER_BLOCK * BLOCKS_PER_GRID) == 0);
 	
 	int *slots = new int[num_slots];
 	
-	for (int i = 0; i < num_slots; i++) {
+	for (uint64_t i = 0; i < num_slots; i++) {
 		slots[i] = i;
 	}
 	
 	int *data = new int[total_size];
 	
-	for (int i = 0; i < total_size; i++) {
+	for (uint64_t i = 0; i < total_size; i++) {
 		data[i] = rand() % 10;
 	}
 	
@@ -94,7 +99,7 @@ int main() {
 	}
 	
 	int cpu_sum = 0;
-	for (int i = 0; i < total_size; i++) {
+	for (uint64_t i = 0; i < total_size; i++) {
 		cpu_sum += data[i];
 	}
 	

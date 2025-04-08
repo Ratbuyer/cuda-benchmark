@@ -2,8 +2,10 @@
 #define THREADS_PER_BLOCK (32 * WARPS_PER_BLOCK)
 #define BLOCKS_PER_GRID 8
 
+#include <cstdint>
+
 // kernel 1
-__global__ void kernel_int4(int * data, int * d_slots, int slots_per_warp, int num_slots, int *results) {
+__global__ void kernel_int4(int * data, int * d_slots, uint64_t slots_per_warp, uint64_t num_slots, int *results) {
 	
 	const int warp_id = (threadIdx.x / 32) + (blockIdx.x * WARPS_PER_BLOCK);
 	const int tid = threadIdx.x % 32;
@@ -30,7 +32,7 @@ __global__ void kernel_int4(int * data, int * d_slots, int slots_per_warp, int n
 	results[thread_id] = sum;
 }
 
-__global__ void kernel_int(int * data, int * d_slots, int slots_per_warp, int num_slots, int *results) {
+__global__ void kernel_int(int * data, int * d_slots, uint64_t slots_per_warp, uint64_t num_slots, int *results) {
 	
 	const int warp_id = (threadIdx.x / 32) + (blockIdx.x * WARPS_PER_BLOCK);
 	const int tid = threadIdx.x % 32;
